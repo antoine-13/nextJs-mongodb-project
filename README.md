@@ -9,7 +9,7 @@ Execute [`git clone`](https://git-scm.com/docs/git-clone/fr) with [git](https://
 ```bash
 git clone https://github.com/antoine-13/nextJs-mongodb-project.git
 ```
-
+Change directory:
 ```bash
 cd nextJs-mongodb-project
 ```
