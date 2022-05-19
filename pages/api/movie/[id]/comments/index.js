@@ -44,15 +44,15 @@ export default async function handler(req, res) {
     const db = client.db("sample_mflix");
     const nameUser = req.body.name; 
     const emailUser = req.body.email;
-    const movieId = req.query.id
-    const commentUser = req.body.commentUser
+    const commentUser = req.body.commentUser;
+    const movieId = req.query.id;
 
     const comment = {
         name: nameUser,
         email: emailUser,
         movie_id: new ObjectId(movieId),
         text: commentUser,
-        date: new Date() ,
+        date: new Date(),
     };
 
     const { insertedId } = await db.collection('comments').insertOne(comment);
