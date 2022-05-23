@@ -1,6 +1,8 @@
 // pages/api/movie/[id].js
 import clientPromise from "../../../../lib/mongodb";
 import { ObjectId } from "mongodb";
+import { Movie } from '../../../../page-components/movie/index.jsx';
+import Head from 'next/head';
 
 /**
 * @swagger
@@ -20,14 +22,14 @@ import { ObjectId } from "mongodb";
 *         404:
 *             description: Not Found
 */
-export default async function handler(req, res) {
+export default async function GetMovie(req, res) {
     const { id } = req.query
     const client = await clientPromise;
     const db = client.db("sample_mflix");
     const movie = await db.collection("movies").find({_id: ObjectId(id) }).toArray();
 
     if(movie){
-        res.json({ status: 200, data: movie });
+        res.json({ movie });
     }
     else if(id == null){
         res.json({status: 500, data: "Need to specify an id"})
@@ -36,6 +38,5 @@ export default async function handler(req, res) {
         res.json({status: 404, data: "Not found"})
     }
     
-
-
 }
+
