@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../public/Ubuntu-Regular.ttf") format("truetype");
+   }
 .mainContainer{
     margin: 0;
     padding: 0;
@@ -7,6 +10,19 @@
     background: linear-gradient(110deg, #fdcd3b 70%, #ffed4b 60%);
     display: flex;
     flex-direction: row;
+    font-style: normal;
+    font-family: "Ubuntu";
+}
+.mainContainer h1{
+    font-size: 2.5em;
+    text-decoration: underline;
+}
+.mainContainer h2{
+    font-size: 2em;
+}
+.containerInfos p{
+    font-style: italic;
+    text-align: justify;
 }
 .containerImages{
     display: flex;
@@ -18,15 +34,16 @@
 }
 
 .mainContainer .cardImage{
-    width: 500px;
+    width: 70%;
     height: 80%;
     border-radius: 40px;
+    background-color: #1ABC9C;
     box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
 }
 
 .cardImage img{
-    width: inherit;
-    height: 100%;
+    width: 100%;
+    height: 80%;
     border-radius: 40px;
     object-fit: cover;
 }
@@ -34,7 +51,40 @@
 .mainContainer .containerInfos{
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    padding: 50px;
+    width: calc(65% - 100px);
+    height: calc(100%-100px);
+}
+
+.containerImgInfos{
+    color: white;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    width: 65%;
-    height: 100%;
+    padding: 30px;
+    height: calc(20% - 60px);
+    width: calc(100% - 60px);
+}
+
+.imgInfos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    overflow: hidden;
+}
+
+
+.movieAuthors, .movieActors{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+
+}
+
+.movieAuthors p, .movieActors p{
+    margin-right: 5px;
+
+    padding: 0;
 }
