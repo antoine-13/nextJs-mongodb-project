@@ -1,7 +1,6 @@
 // pages/api/movie/[id].js
 import clientPromise from "../../../../lib/mongodb";
-import { ObjectId } from "mongodb";
-import { Movie } from '../../../../page-components/movie/index.jsx';
+import { ObjectId } from "mongodb"; 
 import Head from 'next/head';
 
 /**

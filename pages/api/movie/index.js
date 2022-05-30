@@ -3,12 +3,13 @@ import clientPromise from "../../../lib/mongodb";
 
 /**
 * @swagger
-* /api/movies:
+* /api/movie/:
 *   get:
+*       summary: get 10 firsts movies
 *       description: Returns movies
 *       responses:
 *           200:
-*               description: Hello Movies
+*               description: request OK
 */
 export default async function handler(req, res) {
     const client = await clientPromise;

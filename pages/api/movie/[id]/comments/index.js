@@ -15,21 +15,23 @@ import clientPromise from "../../../../../lib/mongodb";
 *         required: true
 *         description: ID of the movie to comment
 *       - in : body
-*         name: informations
-*         description: Informations
+*         name: name
+*         description: name of user 
 *         schema:
-*             type: object
-*             required:
-*                 - name
-*                 - email
-*                 - commentUser
-*             properties:
-*                 name: 
-*                     type: string
-*                 email:
-*                     type: string
-*                 commentUser:
-*                     type: string
+*             type: string
+*         required: true
+*       - in : body
+*         name: email
+*         description: email of user 
+*         schema:
+*             type: string
+*         required: true   
+*       - in : body
+*         name: commentUser
+*         description: comment to add 
+*         schema:
+*             type: string
+*         required: true                    
 *           
 *     responses:
 *         201:
