@@ -4,17 +4,17 @@ import clientPromise from "../../../../../../lib/mongodb";
 
 /**
 * @swagger
-* /api/movie/[id]/favorite/[userId]:
-*   get:
+* /api/movie/{id}/favorite/{userId}:
+*   post:
 *     summary: Add a favorite for a user
 *     parameters:
-*       - in: [id]
+*       - in: path
 *         name: id
 *         schema:
 *           type: string
 *         required: true
 *         description: ID of the movie to add to favorites
-*       - in : [userId]
+*       - in : path
 *         name: userId
 *         description: ID of the user who wants to add a favorite
 *         schema:

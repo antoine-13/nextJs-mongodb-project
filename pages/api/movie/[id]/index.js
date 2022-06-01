@@ -5,11 +5,11 @@ import Head from 'next/head';
 
 /**
 * @swagger
-* /api/movie/[id]:
+* /api/movie/{id}:
 *   get:
 *     summary: Get a movie by id
 *     parameters:
-*       - in: [id]
+*       - in: path
 *         name: id
 *         schema:
 *           type: string
@@ -19,6 +19,8 @@ import Head from 'next/head';
 *         200:
 *             description: all the informations of the movie
 *         404:
+
+
 *             description: Not Found
 */
 export default async function GetMovie(req, res) {

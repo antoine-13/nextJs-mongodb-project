@@ -4,11 +4,11 @@ import clientPromise from "../../../../../lib/mongodb";
 
 /**
 * @swagger
-* /api/movie/[id]/comments:
-*   get:
+* /api/movie/{id}/comments:
+*   post:
 *     summary: Insert a comment for a movie
 *     parameters:
-*       - in: [id]
+*       - in: path
 *         name: id
 *         schema:
 *           type: string

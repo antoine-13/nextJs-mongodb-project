@@ -10,7 +10,7 @@ export default function Home({movies}) {
      <Head>
         <title>Movies</title>
      </Head>
-     <div>
+     <div  className={styles.searchContainer}>
       <form action="" className={styles.searchBar}>
         <input type="search" name="search" pattern=".*\S.*" required></input>
         <button className={styles.searchBtn} type="submit">
@@ -22,6 +22,7 @@ export default function Home({movies}) {
       {
         movies['movies'].map(
           movie =>
+          
           <a href={'http://localhost:3000/' + movie._id}>
             <div className={styles.card}>
               <div className={styles.cardImage}> <img src={movie.poster} /> </div>
