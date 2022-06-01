@@ -5,11 +5,15 @@ import clientPromise from "../../../lib/mongodb";
 * @swagger
 * /api/movie/:
 *   get:
-*       summary: get 10 firsts movies
+*       summary: Get 10 firsts movies
 *       description: Returns movies
 *       responses:
 *           200:
-*               description: request OK
+*               description: get 10 firsts movies
+*           404:
+*               description: Not Found
+*           500:
+*               description: Internal server error
 */
 export default async function handler(req, res) {
     const client = await clientPromise;

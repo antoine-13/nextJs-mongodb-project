@@ -3,38 +3,35 @@ import clientPromise from "../../../../lib/mongodb";
 
 /**
 * @swagger
-* /api/movie/search/:
-*   get:
+* /api/movie/search:
+*   post:
 *     summary: Search a movie
-*     parameters:
-*       - in : body
-*         name: title
-*         description: title of movie
-*         schema:
-*             type: string
-*         required: false
-*       - in : body
-*         name: year
-*         description: year of the movie
-*         schema:
-*             type: integer
-*         required: false   
-*       - in : body
-*         name: genre
-*         description: gender of the movie
-*         schema:
-*             type: array
-*             collectionFormat: multi
-*         required: false                    
+*     requestBody:
+*       description: Endpoint for adding a comment from a user on a specific movie
+*       content:
+*         application/x-www-form-urlencoded:
+*           schema:
+*             type: object
+*             properties:
+*               title:
+*                 type: string
+*                 description: title to search
+*               year:
+*                 type: string
+*                 description: year to search
+*               genre:
+*                 type: list
+*                 description: type of movie to search (split by a comma)
 *           
 *     responses:
-*         201:
+*         200:
 *             description: comment added to the movie
 *         500:
 *             description: Internal server error
 *         404:
 *             description: Not Found
 */
+
 
 // TODO: code search fonction 
 export default async function handler(req, res) {
@@ -78,7 +75,7 @@ export default async function handler(req, res) {
 
     const searchMovies = await db.collection("movies").aggregate(aggr).toArray();
 
-    if(true){
+    if(searchMovies){
         res.json({ status: 200, data: searchMovies });
     }
     else if(id == null){

@@ -5,29 +5,29 @@ import Head from 'next/head';
 
 /**
 * @swagger
-* /api/movie/{id}:
+* /api/movie/{movieId}:
 *   get:
 *     summary: Get a movie by id
 *     parameters:
 *       - in: path
-*         name: id
+*         name: movieId
 *         schema:
 *           type: string
 *         required: true
 *         description: ID of the movie to get
 *     responses:
 *         200:
-*             description: all the informations of the movie
+*             description: all the informations of the movie with id specified
 *         404:
-
-
 *             description: Not Found
+*         500:
+*             description: Internal server error
 */
 export default async function GetMovie(req, res) {
-    const { id } = req.query
+    const { movieId } = req.query
     const client = await clientPromise;
     const db = client.db("sample_mflix");
-    const movie = await db.collection("movies").find({_id: ObjectId(id) }).toArray();
+    const movie = await db.collection("movies").find({_id: ObjectId(movieId) }).toArray();
 
     if(movie){
         res.json({ movie });
